@@ -1,0 +1,172 @@
+body {
+    font-family: Arial;
+}
+h1 {
+    text-align: center;
+    font: 70px Arial;
+    color: #ffffff;
+    overflow: hidden;
+    margin-bottom: 0px;
+}
+table {
+    border-spacing: 0px;
+    font-size: 25px;
+    border: none;
+    padding: 0px;
+}
+tr {
+
+}
+
+/* topmost box on page */
+.add-box {
+    width: 525px;
+    height: 100px;
+    margin: auto;
+    background-color: #cccccc;
+
+}
+
+/* spacer */
+.spacer {
+    width: 525px;
+    height: 30px;
+}
+
+/* box for to-do items */
+.section-box {
+    width: 525px;
+    margin-top: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #cccccc;
+}
+
+.section-title {
+    width: 525px;
+    margin-top: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #49b8dd;
+}
+
+/* placeholder text */
+::-webkit-input-placeholder {
+    color: #d7d7d7;
+}
+::-moz-placeholder { /* Firefox 19+ */
+    color: #d7d7d7;
+}
+:-ms-input-placeholder {
+    color: #d7d7d7;
+}
+:-moz-placeholder { /* Firefox 18- */
+    color: #d7d7d7;
+}
+
+/* inputs */
+input[type="text"] {
+    margin-left: 5px;
+    margin-top: 5px;
+    font-size: 25px;
+    width: 400px;
+    height: 40px;
+    -webkit-border-radius:0px;
+    /* removes visible edges of input */
+    border-width: 0px;
+    /* removes additional edges of input */
+    padding: 0px;
+    /* removes the space between inputs */
+    float:left;
+}
+input[type="submit"] {
+    height: 50px;
+    font-size: 25px;
+    -webkit-border-radius: 0px;
+    color: #ffffff;
+    /* removes visible edges of input */
+    border-width: 0px;
+    /* removes additional edges of input */
+    padding: 0px;
+    /* removes the space between inputs */
+    float:left;
+}
+input[type="submit"]:hover {
+    color: #cecece;
+}
+
+
+/* to-do list */
+.todo-item {
+    padding-left: 10px;
+    margin-top: 18px;
+    font-size: 25px;
+    width: 380px;
+    height: 40px;
+    color: #ffffff;
+
+    /* use horizontal scrolling for overly long to-do items */
+    overflow-x: scroll;
+    white-space: nowrap;
+
+    -webkit-border-radius:0px;
+    /* removes visible edges of input */
+    border-width: 0px;
+    /* removes the space between inputs */
+    float:left;
+}
+
+
+/* complete item */
+.complete-item {
+    padding-left: 10px;
+    margin-top: 18px;
+    font-size: 25px;
+    width: 505px;
+    height: 40px;
+    color: #ffffff;
+
+    /* use horizontal scrolling for overly long to-do items */
+    overflow-x: scroll;
+    white-space: nowrap;
+
+    -webkit-border-radius:0px;
+    /* removes visible edges of input */
+    border-width: 0px;
+    /* removes the space between inputs */
+    float:left;
+}
+
+/* colored boxes */
+.green {
+    width: 60px;
+    background: #5bcf44;
+}
+.green-wide {
+    width: 120px;
+    background: #5bcf44;
+}
+.green:hover, .green-wide:hover {
+    background: #50ab3b;
+}
+.red {
+    width: 60px;
+    background: #f92a29;
+    margin-left: 15px;
+}
+.red-wide {
+    width: 525px;
+    background: #f92a29;
+}
+.red:hover, .red-wide:hover {
+    background: #bb1e1d;
+}
+
+/* error message format */
+.error {
+    width: 525px;
+    margin: auto;
+    text-align: center;
+    font-size: 25px;
+    color: #f92a29;
+}
