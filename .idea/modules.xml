@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/intermediate.iml" filepath="$PROJECT_DIR$/.idea/intermediate.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/ACA_PHP_Intermediate.iml" filepath="$PROJECT_DIR$/.idea/ACA_PHP_Intermediate.iml" />
     </modules>
   </component>
 </project>
