@@ -88,9 +88,12 @@
       <file leaf-file-name="card_game.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/homework/02-card_game/card_game.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.44854587">
-              <caret line="123" column="40" selection-start-line="123" selection-start-column="40" selection-end-line="123" selection-end-column="40" />
-              <folding />
+            <state vertical-scroll-proportion="0.5055928">
+              <caret line="129" column="14" selection-start-line="129" selection-start-column="14" selection-end-line="129" selection-end-column="14" />
+              <folding>
+                <marker date="1443288567412" expanded="true" signature="703:712" placeholder="..." />
+                <marker date="1443288567412" expanded="true" signature="3641:3826" placeholder="..." />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -405,7 +408,13 @@
       <option name="project" value="LOCAL" />
       <updated>1443244048842</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Nearly completed card game&#10;&#10;Just need to finish printing player's cards">
+      <created>1443249909967</created>
+      <option name="number" value="00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1443249909967</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -448,7 +457,8 @@
     <MESSAGE value="Updated hw01-count_types homework to look at new line characters (\\n instead of \n)&#10;&#10;Created hw02-palindromes" />
     <MESSAGE value="Restructured directory&#10;&#10;Renamed files&#10;&#10;Added day04 notes" />
     <MESSAGE value="Restructured homework directory&#10;&#10;Created challenges directory&#10;&#10;Started on card game" />
-    <option name="LAST_COMMIT_MESSAGE" value="Restructured homework directory&#10;&#10;Created challenges directory&#10;&#10;Started on card game" />
+    <MESSAGE value="Nearly completed card game&#10;&#10;Just need to finish printing player's cards" />
+    <option name="LAST_COMMIT_MESSAGE" value="Nearly completed card game&#10;&#10;Just need to finish printing player's cards" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -723,9 +733,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/homework/02-card_game/card_game.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.44854587">
-          <caret line="123" column="40" selection-start-line="123" selection-start-column="40" selection-end-line="123" selection-end-column="40" />
-          <folding />
+        <state vertical-scroll-proportion="0.5055928">
+          <caret line="129" column="14" selection-start-line="129" selection-start-column="14" selection-end-line="129" selection-end-column="14" />
+          <folding>
+            <marker date="1443288567412" expanded="true" signature="703:712" placeholder="..." />
+            <marker date="1443288567412" expanded="true" signature="3641:3826" placeholder="..." />
+          </folding>
         </state>
       </provider>
     </entry>

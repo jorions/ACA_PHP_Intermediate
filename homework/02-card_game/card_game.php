@@ -11,9 +11,6 @@ function getDeck()
     $suits = array("&diams;", "&hearts;", "&spades;", "&clubs;");
     $deck = array();
 
-    // Initialize variable to build associative array keys
-    $keys = array();
-
     // Loop through card suits and append # to build deck
     foreach($suits as $card) {
         for($i=1; $i<15; $i++) {
@@ -21,13 +18,14 @@ function getDeck()
         }
     }
 
-    // Build associative array keys
-    for($i=0; $i<count($deck); $i++) {
-        $keys[] = $i;
-    }
+    // Color code the deck (using by reference for each card to value changes apply outside of foreach
+    foreach($deck as &$card) {
 
-    // Combine keys and deck to form new associative array deck
-    $deck = array_combine($keys, $deck);
+        // If the card is diamonds or hearts make it red
+        if(strpos($card, "&diams;") || strpos($card, "&hearts")) {
+            $card = "<span style='color:red'>$card</span>";
+        }
+    }
 
     // Return deck array
     return $deck;
@@ -58,90 +56,98 @@ function deal($players, $numCards, &$shuffledDeck)
     // Initialize array of players
     $allPlayers = array();
 
-    // Create array of players
-    for($i=0; $i<$players; $i++) {
-        $allPlayers[] = array('name' => "Player $i", 'cards' => array());
+    // Create associative array of players
+    for($i=0; $i<count($players); $i++) {
+        $allPlayers[$players[$i]] = array();
     }
 
     // If there are too many players add more decks to original deck
-    if($players > count($shuffledDeck)/$numCards) {
+    if(count($players) > count($shuffledDeck)/$numCards) {
 
         // Initialize variables to count how many more decks are needed
-        $extraCardsNeeded = ($players * $numCards) - count($shuffledDeck);
+        $extraCardsNeeded = (count($players) * $numCards) - count($shuffledDeck);
         $extraDecksNeeded = ceil($extraCardsNeeded / count($shuffledDeck));
 
         // Initialize variables to hold new decks to be added
-        $extraKeys = array();
         $extraCards = array();
-        $extraDecks = array();
-
-        // Initialize key incrementing variable
-        $newKey = count($shuffledDeck);
 
         // Tell users what happened
         if($extraDecksNeeded == 1) {
-            echo "There are too many players so we have added 1 more deck.";
+            echo "<b>There are too many players so we have added 1 more deck</b><br /><br />";
         } else {
-            echo "There are too many players so we have added $extraDecksNeeded more decks";
+            echo "<b>There are too many players so we have added $extraDecksNeeded more decks</b><br /><br />";
         }
 
         // Create additional decks to add
         for($i=0; $i<$extraDecksNeeded; $i++) {
 
-            // Loop through deck and build additional keys and cards arrays
-            foreach($shuffledDeck as $key => $card) {
-                $extraKeys[] = count($shuffledDeck) - 1 + $newKey;
+            // Loop through deck and build additional cards array
+            foreach($shuffledDeck as $card) {
                 $extraCards[] = $card;
-
-                // Increase key counter
-                $newKey++;
             }
         }
 
-        // Combine keys and deck to form new associative array of extra decks
-        $extraDecks = array_combine($extraKeys, $extraCards);
-
         // Add new decks to original deck
-        $shuffledDeck = array_merge($shuffledDeck, $extraDecks);
+        $shuffledDeck = array_merge($shuffledDeck, $extraCards);
     }
 
-    print_r($shuffledDeck);
     // Loop through array of players and deal cards based on what is available
-    foreach($allPlayers as $currentPlayer) {
+    for($p=0; $p<count($players); $p++) {
 
         // Deal all players their cards
         for($i=0; $i<$numCards; $i++) {
 
-            // Initialize array of available keys
-            $availableKeys = array_keys($shuffledDeck);
-
-            // Get a random key from available cards
-            $dealtCardKey = $availableKeys[rand(0, count($availableKeys)-1)];
-
-            // Recast key as string for use as key
-            $dealtCardKey = (string)$dealtCardKey;
+            // Get a random index from available cards
+            $dealtCardIndex = rand(0, count($shuffledDeck)-1);
 
             // Add card to player's hand
-            $currentPlayer['cards'][] = $shuffledDeck[$dealtCardKey];
+            $allPlayers[$players[$p]][] = $shuffledDeck[$dealtCardIndex];
 
-            // Unset selected card
-            unset($shuffledDeck["$dealtCardKey"]);
+            // Unset selected card from the deck
+            unset($shuffledDeck[$dealtCardIndex]);
 
             // Re-index array
             $shuffledDeck = array_values($shuffledDeck);
         }
     }
 
-    // Return all players and their cards
-    foreach($allPlayers as $currentPlayer) {
-        echo "<h3>" . $currentPlayer['name'] . "'s Hand</h3>";
-        print_r($currentPlayer['cards']);
-    }
-
+    // Return array of players
+    return $allPlayers;
 }
 
+
+
+// Crack open a brand new deck of cards
+$deck = getDeck();
+
+// Shuffle the deck
+shuffleDeck($deck);
+
+echo 'Deck after shuffling, but before dealing: <br/>';
+print_r($deck);
+
+echo '<br />';
+echo '<br />';
+
+$players = array('Joe', 'Mary', 'Zim');
+$numCards = 3;
+
+$playerHands = deal($players, $numCards, $deck);
+
+echo 'Hands each player has: <br/>';
+echo print_r($playerHands);
+
+echo '<br />';
+echo '<br />';
+
+echo 'Deck after dealing: <br/>';
+echo print_r($deck);
+
+
+/*
 $newDeck = getDeck();
 
 shuffleDeck($newDeck);
 
-deal(5, 50, $newDeck);
+deal(5, 5, $newDeck);
+*/
