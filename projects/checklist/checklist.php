@@ -6,6 +6,7 @@
     <link href="styles.css" type="text/css" rel="stylesheet" />
 </head>
 <body>
+
 <?php
 //enable use of $_SESSION variables
 session_start();
@@ -34,25 +35,23 @@ if(isset($_POST['add'])) {
 }
 
 //checks for list update inputs
-$removeCount = 0;
+$id = 0;
 foreach ($_SESSION['todo'] as $item) {
 
-    //create temporary item name with " " replaced with "_" because names can't be stored with spaces
-    $tempItem = str_replace(" ", "_", $item);
-
     //if the Complete button has been pressed
-    if (isset($_POST["complete-$tempItem"])) {
-        $_SESSION['complete'][] = $_SESSION['todo'][$removeCount];
-        unset($_SESSION['todo'][$removeCount]);
-        $_SESSION['todo'] = array_values($_SESSION['todo']); //Re-indexes array
-    } else if (isset($_POST["remove-$tempItem"])) {
-        unset($_SESSION['todo'][$removeCount]);
-        $_SESSION['todo'] = array_values($_SESSION['todo']); //Re-indexes array
-        //only applied as an else statement here and below because if a value in the array was unset then we wouldn't want to increase the removeCount's value
-    } else {
-        $removeCount++;
+    if (isset($_POST["complete-$id"])) {
+        $_SESSION['complete'][] = $_SESSION['todo'][$id];
+        unset($_SESSION['todo'][$id]);
+    } else if (isset($_POST["remove-$id"])) {
+        unset($_SESSION['todo'][$id]);
     }
+
+    //increment the index
+    $id++;
 }
+
+//re-index the array
+$_SESSION['todo'] = array_values($_SESSION['todo']);
 ?>
 
 <!--create the input box-->
@@ -60,7 +59,7 @@ foreach ($_SESSION['todo'] as $item) {
     <form action="checklist.php" method="POST">
         <input type="text" name="newItem" placeholder="ADD A TASK" value="">
         <input class="green-wide" type="submit" name="add" value="ADD"><br />
-        <input onclick="resetList()" class="red-wide" type="submit" name="reset" value="RESET LIST">
+        <input class="red-wide" type="submit" name="reset" value="RESET LIST">
     </form>
 </div>
 
@@ -75,13 +74,15 @@ foreach ($_SESSION['todo'] as $item) {
         <form action="checklist.php" method="POST">
             <table cellspacing="0px" cellpadding="0px">
                 <?php
+                $id = 0;
                 foreach($_SESSION['todo'] as $item) { ?>
                     <tr>
-                        <td><input class="green" type="submit" name="complete-<?php echo str_replace(" ", "_", $item); ?>" value="&#10003;"></td>
+                        <td><input class="green" type="submit" name="complete-<?php echo $id; ?>" value="&#10003;"></td>
                         <td class="todo-item"><?php echo $item; ?></td>
-                        <td><input class="red" type="submit" name="remove-<?php echo str_replace(" ", "_", $item); ?>" value="X"></td>
+                        <td><input class="red" type="submit" name="remove-<?php echo $id; ?>" value="X"></td>
                     </tr>
                     <?php
+                    $id++;
                 }
                 ?>
             </table>
