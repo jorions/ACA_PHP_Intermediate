@@ -1,0 +1,98 @@
+.table {
+    float: left;
+    min-width: 100%;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    background-color: #376e37;
+}
+
+.hand {
+    float: left;
+    margin-left: 80px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+
+.name {
+    width: 100%;
+    text-align: center;
+    font-size: 25px;
+    margin-bottom: 15px;
+    color: white;
+    border: 2px solid goldenrod;
+    -moz-text-shadow: 0 0 5px #000000;
+    -webkit-text-shadow: 0 0 5px #000000;
+    text-shadow: 0 0 5px #000000;
+    -moz-box-shadow: 0 0 15px #000000;
+    -webkit-box-shadow: 0 0 15px #000000;
+    box-shadow: 0 0 15px #000000;
+}
+
+.card-red {
+    color: red;
+    float: left;
+    margin-left: 5px;
+    border: 1px solid black;
+    width: 70px;
+    height: 100px;
+    background-color: white;
+    -moz-box-shadow: 0 7px 5px #000000;
+    -webkit-box-shadow: 0 7px 5px #000000;
+    box-shadow: 0 7px 5px #000000;
+    display: inline-block;
+}
+
+.card-black {
+    float: left;
+    margin-left: 5px;
+    border: 1px solid black;
+    width: 70px;
+    height: 100px;
+    background-color: white;
+    -moz-box-shadow: 0 7px 5px #000000;
+    -webkit-box-shadow: 0 7px 5px #000000;
+    box-shadow: 0 7px 5px #000000;
+}
+
+
+/*
+.cardValue {
+    width: 100%;
+    margin-top: 18px;
+    font-size: 30px;
+    text-align: center;
+}
+*/
+
+.cardValueTopLeft {
+    margin-left: 5px;
+    margin-top: 5px;
+    float: left;
+}
+
+.cardValueTopRight {
+    margin-right: 5px;
+    margin-top: 5px;
+    float: right;
+}
+
+
+.cardSuiteMiddle {
+    width: 70px;
+    text-align: center;
+    margin-top: 25px;
+    font-size: 40px;
+}
+
+.cardValueBottomLeft {
+    margin-left: 5px;
+    margin-top: 7px;
+    float: left;
+}
+
+.cardValueBottomRight {
+    margin-right: 5px;
+    margin-top: 7px;
+    float: right;
+}
