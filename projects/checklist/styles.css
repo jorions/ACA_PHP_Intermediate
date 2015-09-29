@@ -1,3 +1,12 @@
+/* remove scrollbars in chrome */
+::-webkit-scrollbar {
+    display: none;
+}
+/* hide scrollbar in IE */
+html {
+    -ms-overflow-style: none;
+}
+
 body {
     font-family: Arial;
 }

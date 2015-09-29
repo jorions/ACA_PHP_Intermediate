@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2b00f22a-bab1-4afa-ad82-14534465cfd0" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/homework/02-card_game/card_game.php" afterPath="$PROJECT_DIR$/homework/02-card_game/card_game.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/projects/checklist/styles.css" afterPath="$PROJECT_DIR$/projects/checklist/styles.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="intermediate.iws" />
@@ -25,11 +25,31 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="card_game.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="checklist.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/projects/checklist/checklist.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-9.807693">
+              <caret line="21" column="31" selection-start-line="21" selection-start-column="31" selection-end-line="21" selection-end-column="31" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="styles.css" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/projects/checklist/styles.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.14782609">
+              <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="card_game.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/homework/02-card_game/card_game.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="1.7271676">
-              <caret line="262" column="17" selection-start-line="262" selection-start-column="17" selection-end-line="262" selection-end-column="17" />
+            <state vertical-scroll-proportion="-3.9818182">
+              <caret line="106" column="150" selection-start-line="106" selection-start-column="16" selection-end-line="106" selection-end-column="150" />
               <folding />
             </state>
           </provider>
@@ -71,7 +91,6 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/projects/checklist.php" />
-        <option value="$PROJECT_DIR$/projects/checklist/styles.css" />
         <option value="$PROJECT_DIR$/projects/temp.php" />
         <option value="$PROJECT_DIR$/homework/hw01-count_types.php" />
         <option value="$PROJECT_DIR$/homework/hw02-palindromes.php" />
@@ -81,9 +100,10 @@
         <option value="$PROJECT_DIR$/notes/day04/ajax_example.php" />
         <option value="$PROJECT_DIR$/notes/day04/04-ajax_example.php" />
         <option value="$PROJECT_DIR$/notes/day04/03-timebox01-name_entry.php" />
-        <option value="$PROJECT_DIR$/projects/checklist/checklist.php" />
         <option value="$PROJECT_DIR$/homework/02-card_game/styles.css" />
         <option value="$PROJECT_DIR$/homework/02-card_game/card_game.php" />
+        <option value="$PROJECT_DIR$/projects/checklist/checklist.php" />
+        <option value="$PROJECT_DIR$/projects/checklist/styles.css" />
       </list>
     </option>
   </component>
@@ -135,6 +155,28 @@
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
             <PATH_ELEMENT USER_OBJECT="ACA_PHP_Intermediate">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="projects">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="ACA_PHP_Intermediate">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="projects">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="checklist">
               <option name="myItemId" value="" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
@@ -199,6 +241,16 @@
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
             <PATH_ELEMENT USER_OBJECT="homework">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="ACA_PHP_Intermediate">
               <option name="myItemId" value="" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
@@ -327,7 +379,13 @@
       <option name="project" value="LOCAL" />
       <updated>1443491982600</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Added Javascript to make the &quot;more decks needed&quot; prompt show up as an alert">
+      <created>1443493218785</created>
+      <option name="number" value="00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1443493218785</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -396,7 +454,8 @@
     <MESSAGE value="Updated CSS formatting to put border around table, show bottom card values upside-down, and center cards on table&#10;&#10;Added printDeck()" />
     <MESSAGE value="Further updated CSS formatting" />
     <MESSAGE value="Made the shuffleDeck() function use my own algorithm instead of simply shuffle($deck)" />
-    <option name="LAST_COMMIT_MESSAGE" value="Made the shuffleDeck() function use my own algorithm instead of simply shuffle($deck)" />
+    <MESSAGE value="Added Javascript to make the &quot;more decks needed&quot; prompt show up as an alert" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added Javascript to make the &quot;more decks needed&quot; prompt show up as an alert" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -727,26 +786,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/projects/checklist/styles.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-2.1619565">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/projects/checklist/checklist.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3232662">
-          <caret line="41" column="40" selection-start-line="41" selection-start-column="40" selection-end-line="41" selection-end-column="40" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/homework/02-card_game/styles.css">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="50" column="23" selection-start-line="50" selection-start-column="23" selection-end-line="50" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/homework/02-card_game/card_game.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-3.9818182">
+          <caret line="106" column="150" selection-start-line="106" selection-start-column="16" selection-end-line="106" selection-end-column="150" />
           <folding />
         </state>
       </provider>
@@ -759,10 +810,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/homework/02-card_game/card_game.php">
+    <entry file="file://$PROJECT_DIR$/projects/checklist/checklist.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.7271676">
-          <caret line="262" column="17" selection-start-line="262" selection-start-column="17" selection-end-line="262" selection-end-column="17" />
+        <state vertical-scroll-proportion="-9.807693">
+          <caret line="21" column="31" selection-start-line="21" selection-start-column="31" selection-end-line="21" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/projects/checklist/styles.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.14782609">
+          <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
           <folding />
         </state>
       </provider>
