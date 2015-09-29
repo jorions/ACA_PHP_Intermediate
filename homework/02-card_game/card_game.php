@@ -104,9 +104,9 @@
 
             // Tell users what happened
             if($extraDecksNeeded == 1) {
-                echo "<b>There are too many players so we have added 1 more deck</b><br /><br />";
+                ?><script type="text/javascript" language="javascript">alert('There are too many players so we have added 1 more deck');</script><?php
             } else {
-                echo "<b>There are too many players so we have added $extraDecksNeeded more decks</b><br /><br />";
+                ?><script type="text/javascript" language="javascript">alert('There are too many players so we have added <?php echo $extraDecksNeeded; ?> more decks');</script><?php
             }
 
             // Create additional decks to add
