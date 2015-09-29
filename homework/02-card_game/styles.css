@@ -1,16 +1,29 @@
 .table {
     float: left;
-    min-width: 100%;
+    width: 95%;
     margin-top: 50px;
     margin-bottom: 50px;
     background-color: #376e37;
+    border: 20px solid saddlebrown;
+
+    position: relative;
+    display: block;
+    text-align: center;
+    height: auto;
 }
 
 .hand {
-    float: left;
+    position: relative;
+    margin: 20px auto;
+    padding-left: 40px;
+    padding-right: 40px;
+    /*
     margin-left: 80px;
     margin-top: 20px;
     margin-bottom: 20px;
+    */
+    z-index: 2;
+    display: inline-block;
 }
 
 
@@ -33,6 +46,7 @@
     color: red;
     float: left;
     margin-left: 5px;
+    margin-bottom: 5px;
     border: 1px solid black;
     width: 70px;
     height: 100px;
@@ -46,6 +60,7 @@
 .card-black {
     float: left;
     margin-left: 5px;
+    margin-bottom: 5px;
     border: 1px solid black;
     width: 70px;
     height: 100px;
@@ -53,8 +68,8 @@
     -moz-box-shadow: 0 7px 5px #000000;
     -webkit-box-shadow: 0 7px 5px #000000;
     box-shadow: 0 7px 5px #000000;
+    display: inline-block;
 }
-
 
 /*
 .cardValue {
@@ -89,10 +104,22 @@
     margin-left: 5px;
     margin-top: 7px;
     float: left;
+
+    /* Flip text upside down */
+    -webkit-transform:rotate(-180deg);
+    -moz-transform:rotate(-180deg);
+    -o-transform:rotate(-180deg);
+    transform:rotate(-180deg);
 }
 
 .cardValueBottomRight {
     margin-right: 5px;
     margin-top: 7px;
     float: right;
+
+
+    -webkit-transform:rotate(-180deg);
+    -moz-transform:rotate(-180deg);
+    -o-transform:rotate(-180deg);
+    transform:rotate(-180deg);
 }

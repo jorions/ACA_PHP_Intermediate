@@ -177,7 +177,52 @@
     }
 
 
+    /**
+     * @param $deck An array of a deck of cards
+     * @param $label A string that will display above the output deck of cards
+     */
+    function printDeck($deck, $label) {
 
+        // Wrap entire output in styled div
+        echo "<div class='table'>";
+
+            // Wrap deck in styled div
+            echo "<div class='hand'>";
+
+                echo "<div class='name'><b>$label</b></div>";
+
+                // Iterate through deck array
+                foreach($deck as $card) {
+
+                    // If card value is 10 or greater replace with face (deal with this first and then deal with cards containing "0")
+                    if(substr($card, strpos($card, "&")-2, 1) == "1") {
+                        $card = str_replace("11", "J", $card);
+                        $card = str_replace("12", "Q", $card);
+                        $card = str_replace("13", "K", $card);
+                        $card = str_replace("14", "K", $card);
+
+                        // Else if the a card contains 0 replace with "A"
+                    } else {
+                        $card = str_replace("0", "A", $card);
+                    }
+
+                    // Color code and print the cards
+                    if(strpos($card, "&diams;") || strpos($card, "&hearts;")) {
+                        echo "<div class='card-red'>";
+                    } else {
+                        echo "<div class='card-black'>";
+                    }
+                            echo "<div class='cardValueTopLeft'>$card</div>";
+                            echo "<div class='cardValueTopRight'>$card</div>";
+                            echo "<div class='cardSuiteMiddle'>" . substr($card, strpos($card, "&"), 8) . "</div>";
+                            echo "<div class='cardValueBottomLeft'>$card</div>";
+                            echo "<div class='cardValueBottomRight'>$card</div>";
+                        echo "</div>";
+                }
+
+            echo "</div>";
+        echo "</div>";
+    }
 
 
     // Crack open a brand new deck of cards
@@ -188,6 +233,8 @@
 
     echo 'Deck after shuffling, but before dealing: <br/>';
     print_r($deck);
+
+    printDeck($deck, "Deck After Shuffling, But Before Dealing");
 
     echo '<br />';
     echo '<br />';
@@ -209,6 +256,7 @@
     echo 'Deck after dealing: <br/>';
     echo print_r($deck);
 
+    printDeck($deck, "Deck After Dealing");
 
     /*
     $newDeck = getDeck();
