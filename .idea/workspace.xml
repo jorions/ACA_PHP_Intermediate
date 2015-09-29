@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2b00f22a-bab1-4afa-ad82-14534465cfd0" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/homework/02-card_game/styles.css" afterPath="$PROJECT_DIR$/homework/02-card_game/styles.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/homework/02-card_game/card_game.php" afterPath="$PROJECT_DIR$/homework/02-card_game/card_game.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="intermediate.iws" />
@@ -25,20 +25,20 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="card_game.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="card_game.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/homework/02-card_game/card_game.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-148.8077">
-              <caret line="239" column="18" selection-start-line="239" selection-start-column="18" selection-end-line="239" selection-end-column="18" />
+            <state vertical-scroll-proportion="0.7849711">
+              <caret line="74" column="30" selection-start-line="74" selection-start-column="30" selection-end-line="74" selection-end-column="30" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="styles.css" pinned="false" current-in-tab="true">
+      <file leaf-file-name="styles.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/homework/02-card_game/styles.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.48043478">
+            <state vertical-scroll-proportion="0.0">
               <caret line="50" column="23" selection-start-line="50" selection-start-column="23" selection-end-line="50" selection-end-column="23" />
               <folding />
             </state>
@@ -72,8 +72,8 @@
         <option value="$PROJECT_DIR$/notes/day04/04-ajax_example.php" />
         <option value="$PROJECT_DIR$/notes/day04/03-timebox01-name_entry.php" />
         <option value="$PROJECT_DIR$/projects/checklist/checklist.php" />
-        <option value="$PROJECT_DIR$/homework/02-card_game/card_game.php" />
         <option value="$PROJECT_DIR$/homework/02-card_game/styles.css" />
+        <option value="$PROJECT_DIR$/homework/02-card_game/card_game.php" />
       </list>
     </option>
   </component>
@@ -273,7 +273,13 @@
       <option name="project" value="LOCAL" />
       <updated>1443489981402</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Further updated CSS formatting">
+      <created>1443490364635</created>
+      <option name="number" value="00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1443490364635</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -340,7 +346,8 @@
     <MESSAGE value="Nearly completed card game&#10;&#10;Just need to finish printing player's cards" />
     <MESSAGE value="Added card color coding to deck()&#10;&#10;Fixed deck() to not return an associative array (misread instructions)&#10;&#10;Fixed shuffleDeck() to return the array of players, and updated the player array structure&#10;&#10;Finished the homework!" />
     <MESSAGE value="Updated CSS formatting to put border around table, show bottom card values upside-down, and center cards on table&#10;&#10;Added printDeck()" />
-    <option name="LAST_COMMIT_MESSAGE" value="Updated CSS formatting to put border around table, show bottom card values upside-down, and center cards on table&#10;&#10;Added printDeck()" />
+    <MESSAGE value="Further updated CSS formatting" />
+    <option name="LAST_COMMIT_MESSAGE" value="Further updated CSS formatting" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -691,18 +698,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/homework/02-card_game/card_game.php">
+    <entry file="file://$PROJECT_DIR$/homework/02-card_game/styles.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-148.8077">
-          <caret line="239" column="18" selection-start-line="239" selection-start-column="18" selection-end-line="239" selection-end-column="18" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="50" column="23" selection-start-line="50" selection-start-column="23" selection-end-line="50" selection-end-column="23" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/homework/02-card_game/styles.css">
+    <entry file="file://$PROJECT_DIR$/homework/02-card_game/card_game.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.48043478">
-          <caret line="50" column="23" selection-start-line="50" selection-start-column="23" selection-end-line="50" selection-end-column="23" />
+        <state vertical-scroll-proportion="0.7849711">
+          <caret line="74" column="30" selection-start-line="74" selection-start-column="30" selection-end-line="74" selection-end-column="30" />
           <folding />
         </state>
       </provider>

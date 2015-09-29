@@ -51,8 +51,28 @@
          */
     function shuffleDeck(&$deck)
     {
-        // Shuffle the deck
-        shuffle($deck);
+        // Write a custom function. Don't just use shuffle($deck)
+
+        // Initialize variables to hold shuffled deck and size of original deck
+        $shuffledDeck = array();
+        $deckSize = count($deck);
+
+        // Iterate through the deck array, constrained by original array size to make sure every card is handled
+        for($i=0; $i<$deckSize; $i++) {
+
+            // Define a random card index
+            $index = rand(0, count($deck)-1);
+
+            // Move a card from the original deck into the shuffled deck
+            $shuffledDeck[] = $deck[$index];
+            unset($deck[$index]);
+
+            // Re-index the deck array
+            $deck = array_values($deck);
+        }
+
+        // Give the deck the shuffledDeck value
+        $deck = $shuffledDeck;
     }
 
     /**
