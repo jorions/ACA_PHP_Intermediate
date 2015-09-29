@@ -1,11 +1,14 @@
 .table {
-    float: left;
+    width: auto;
+    margin: 50px auto;
+    /*
+    float: left; (add this to card-red and card-black if you use this for table display instead)
     width: 95%;
     margin-top: 50px;
     margin-bottom: 50px;
+    */
     background-color: #376e37;
     border: 20px solid saddlebrown;
-
     position: relative;
     display: block;
     text-align: center;
@@ -44,7 +47,6 @@
 
 .card-red {
     color: red;
-    float: left;
     margin-left: 5px;
     margin-bottom: 5px;
     border: 1px solid black;
@@ -58,7 +60,6 @@
 }
 
 .card-black {
-    float: left;
     margin-left: 5px;
     margin-bottom: 5px;
     border: 1px solid black;
