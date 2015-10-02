@@ -1,0 +1,126 @@
+.table {
+    width: auto;
+    margin: 50px auto;
+    /*
+    float: left; (add this to card-red and card-black if you use this for table display instead)
+    width: 95%;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    */
+    background-color: #376e37;
+    border: 20px solid saddlebrown;
+    position: relative;
+    display: block;
+    text-align: center;
+    height: auto;
+}
+
+.hand {
+    position: relative;
+    margin: 20px auto;
+    padding-left: 40px;
+    padding-right: 40px;
+    /*
+    margin-left: 80px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    */
+    z-index: 2;
+    display: inline-block;
+}
+
+
+.name {
+    width: 100%;
+    text-align: center;
+    font-size: 25px;
+    margin-bottom: 15px;
+    color: white;
+    border: 2px solid goldenrod;
+    -moz-text-shadow: 0 0 5px #000000;
+    -webkit-text-shadow: 0 0 5px #000000;
+    text-shadow: 0 0 5px #000000;
+    -moz-box-shadow: 0 0 15px #000000;
+    -webkit-box-shadow: 0 0 15px #000000;
+    box-shadow: 0 0 15px #000000;
+}
+
+.card-red {
+    color: red;
+    margin-left: 5px;
+    margin-bottom: 5px;
+    border: 1px solid black;
+    width: 70px;
+    height: 100px;
+    background-color: white;
+    -moz-box-shadow: 0 7px 5px #000000;
+    -webkit-box-shadow: 0 7px 5px #000000;
+    box-shadow: 0 7px 5px #000000;
+    display: inline-block;
+}
+
+.card-black {
+    margin-left: 5px;
+    margin-bottom: 5px;
+    border: 1px solid black;
+    width: 70px;
+    height: 100px;
+    background-color: white;
+    -moz-box-shadow: 0 7px 5px #000000;
+    -webkit-box-shadow: 0 7px 5px #000000;
+    box-shadow: 0 7px 5px #000000;
+    display: inline-block;
+}
+
+/*
+.cardValue {
+    width: 100%;
+    margin-top: 18px;
+    font-size: 30px;
+    text-align: center;
+}
+*/
+
+.cardValueTopLeft {
+    margin-left: 5px;
+    margin-top: 5px;
+    float: left;
+}
+
+.cardValueTopRight {
+    margin-right: 5px;
+    margin-top: 5px;
+    float: right;
+}
+
+
+.cardSuitMiddle {
+    width: 70px;
+    text-align: center;
+    margin-top: 30px;
+    font-size: 40px;
+}
+
+.cardValueBottomLeft {
+    margin-left: 5px;
+    margin-top: 2px;
+    float: left;
+
+    /* Flip text upside down */
+    -webkit-transform:rotate(-180deg);
+    -moz-transform:rotate(-180deg);
+    -o-transform:rotate(-180deg);
+    transform:rotate(-180deg);
+}
+
+.cardValueBottomRight {
+    margin-right: 5px;
+    margin-top: 2px;
+    float: right;
+
+
+    -webkit-transform:rotate(-180deg);
+    -moz-transform:rotate(-180deg);
+    -o-transform:rotate(-180deg);
+    transform:rotate(-180deg);
+}
