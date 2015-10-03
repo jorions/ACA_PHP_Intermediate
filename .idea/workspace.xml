@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2b00f22a-bab1-4afa-ad82-14534465cfd0" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/homework/02-card_game/styles.css" afterPath="$PROJECT_DIR$/homework/02-card_game/styles.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/homework/04-big_card_game/styles.css" afterPath="$PROJECT_DIR$/homework/04-big_card_game/styles.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="intermediate.iws" />
@@ -55,10 +55,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="styles.css" pinned="false" current-in-tab="true">
+      <file leaf-file-name="styles.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/homework/02-card_game/styles.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.74130434">
+            <state vertical-scroll-proportion="0.0">
               <caret line="117" column="17" selection-start-line="117" selection-start-column="17" selection-end-line="117" selection-end-column="17" />
               <folding />
             </state>
@@ -77,11 +77,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="styles.css" pinned="false" current-in-tab="false">
+      <file leaf-file-name="styles.css" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/homework/04-big_card_game/styles.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.09456522">
+              <caret line="82" column="0" selection-start-line="82" selection-start-column="0" selection-end-line="82" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -125,9 +125,9 @@
         <option value="$PROJECT_DIR$/notes/day06/05-static.php" />
         <option value="$PROJECT_DIR$/homework/02-card_game/card_game.php" />
         <option value="$PROJECT_DIR$/homework/04-big_card_game/card.php" />
-        <option value="$PROJECT_DIR$/homework/04-big_card_game/styles.css" />
         <option value="$PROJECT_DIR$/notes/day06/01-classes.php" />
         <option value="$PROJECT_DIR$/homework/02-card_game/styles.css" />
+        <option value="$PROJECT_DIR$/homework/04-big_card_game/styles.css" />
       </list>
     </option>
   </component>
@@ -393,7 +393,13 @@
       <option name="project" value="LOCAL" />
       <updated>1443849939735</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Finalized card formatting">
+      <created>1443850352326</created>
+      <option name="number" value="00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1443850352326</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -445,7 +451,8 @@
     <MESSAGE value="Updated css of .cardSuite to lower on card" />
     <MESSAGE value="Day 6 of class notes&#10;&#10;Started object orientation project (04-big_card_game)" />
     <MESSAGE value="Correcting some sort of merge error" />
-    <option name="LAST_COMMIT_MESSAGE" value="Correcting some sort of merge error" />
+    <MESSAGE value="Finalized card formatting" />
+    <option name="LAST_COMMIT_MESSAGE" value="Finalized card formatting" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -797,14 +804,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/homework/04-big_card_game/styles.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/homework/04-big_card_game/card.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-48.115383">
@@ -825,8 +824,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/homework/02-card_game/styles.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.74130434">
+        <state vertical-scroll-proportion="0.0">
           <caret line="117" column="17" selection-start-line="117" selection-start-column="17" selection-end-line="117" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/homework/04-big_card_game/styles.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.09456522">
+          <caret line="82" column="0" selection-start-line="82" selection-start-column="0" selection-end-line="82" selection-end-column="0" />
           <folding />
         </state>
       </provider>

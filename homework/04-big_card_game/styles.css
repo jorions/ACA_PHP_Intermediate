@@ -97,13 +97,13 @@
 .cardSuitMiddle {
     width: 70px;
     text-align: center;
-    margin-top: 30px;
+    margin-top: 28px;
     font-size: 40px;
 }
 
 .cardValueBottomLeft {
     margin-left: 5px;
-    margin-top: 2px;
+    margin-top: 4px;
     float: left;
 
     /* Flip text upside down */
@@ -115,7 +115,7 @@
 
 .cardValueBottomRight {
     margin-right: 5px;
-    margin-top: 2px;
+    margin-top: 4px;
     float: right;
 
 
