@@ -185,7 +185,7 @@
                         }
                                 echo "<div class='cardValueTopLeft'>$card</div>";
                                 echo "<div class='cardValueTopRight'>$card</div>";
-                                echo "<div class='cardSuiteMiddle'>" . substr($card, strpos($card, "&"), 8) . "</div>";
+                                echo "<div class='cardSuitMiddle'>" . substr($card, strpos($card, "&"), 8) . "</div>";
                                 echo "<div class='cardValueBottomLeft'>$card</div>";
                                 echo "<div class='cardValueBottomRight'>$card</div>";
                             echo "</div>";
@@ -234,7 +234,7 @@
                     }
                             echo "<div class='cardValueTopLeft'>$card</div>";
                             echo "<div class='cardValueTopRight'>$card</div>";
-                            echo "<div class='cardSuiteMiddle'>" . substr($card, strpos($card, "&"), 8) . "</div>";
+                            echo "<div class='cardSuitMiddle'>" . substr($card, strpos($card, "&"), 8) . "</div>";
                             echo "<div class='cardValueBottomLeft'>$card</div>";
                             echo "<div class='cardValueBottomRight'>$card</div>";
                         echo "</div>";
