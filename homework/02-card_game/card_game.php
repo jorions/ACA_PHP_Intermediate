@@ -22,7 +22,7 @@
 
         // Loop through card suits and append # to build deck
         foreach($suits as $card) {
-            for($i=0; $i<15; $i++) {
+            for($i=0; $i<14; $i++) {
                 $deck[] = $i . $card;
             }
         }
@@ -170,7 +170,6 @@
                             $card = str_replace("11", "J", $card);
                             $card = str_replace("12", "Q", $card);
                             $card = str_replace("13", "K", $card);
-                            $card = str_replace("14", "K", $card);
 
                         // Else if the a card contains 0 replace with "A"
                         } else {
@@ -252,7 +251,9 @@
     shuffleDeck($deck);
 
     echo 'Deck after shuffling, but before dealing: <br/>';
+    echo "<pre>";
     print_r($deck);
+    echo "</pre>";
 
     printDeck($deck, "Deck After Shuffling, But Before Dealing");
 
