@@ -118,7 +118,7 @@
     margin-top: 4px;
     float: right;
 
-
+    /* Flip text upside down */
     -webkit-transform:rotate(-180deg);
     -moz-transform:rotate(-180deg);
     -o-transform:rotate(-180deg);
