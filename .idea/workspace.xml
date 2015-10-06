@@ -2,9 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2b00f22a-bab1-4afa-ad82-14534465cfd0" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/homework/04-big_card_game/card-v2.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/homework/04-big_card_game/card.php" afterPath="$PROJECT_DIR$/homework/04-big_card_game/card.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/homework/02-card_game/styles.css" afterPath="$PROJECT_DIR$/homework/02-card_game/styles.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/homework/04-big_card_game/styles.css" afterPath="$PROJECT_DIR$/homework/04-big_card_game/styles.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="intermediate.iws" />
@@ -21,6 +20,30 @@
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="C:\Users\Jared\Desktop\ACA\ACA_PHP_Intermediate" />
   </component>
+  <component name="DockManager">
+    <window id="2">
+      <content type="file-editors">
+        <state>
+          <leaf>
+            <file leaf-file-name="card.php" pinned="false" current-in-tab="true">
+              <entry file="file://$PROJECT_DIR$/homework/04-big_card_game/card.php">
+                <provider selected="true" editor-type-id="text-editor">
+                  <state vertical-scroll-proportion="-0.15212528">
+                    <caret line="261" column="0" selection-start-line="261" selection-start-column="0" selection-end-line="261" selection-end-column="0" />
+                    <folding>
+                      <marker date="1444090592275" expanded="true" signature="3817:4202" placeholder="..." />
+                      <marker date="1444090592275" expanded="true" signature="7560:7949" placeholder="..." />
+                      <marker date="1444090592275" expanded="true" signature="12211:12321" placeholder="..." />
+                    </folding>
+                  </state>
+                </provider>
+              </entry>
+            </file>
+          </leaf>
+        </state>
+      </content>
+    </window>
+  </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FavoritesManager">
     <favorites_list name="intermediate" />
@@ -30,8 +53,8 @@
       <file leaf-file-name="card_game.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/homework/02-card_game/card_game.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-37.653847">
-              <caret line="210" column="61" selection-start-line="210" selection-start-column="16" selection-end-line="210" selection-end-column="61" />
+            <state vertical-scroll-proportion="-0.65384614">
+              <caret line="237" column="58" selection-start-line="237" selection-start-column="58" selection-end-line="237" selection-end-column="58" />
               <folding />
             </state>
           </provider>
@@ -47,21 +70,14 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="card.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/homework/04-big_card_game/card.php">
+      <file leaf-file-name="card-v2.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/homework/04-big_card_game/card-v2.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.88590604">
-              <caret line="570" column="75" selection-start-line="570" selection-start-column="75" selection-end-line="570" selection-end-column="75" />
+            <state vertical-scroll-proportion="0.8668904">
+              <caret line="606" column="32" selection-start-line="606" selection-start-column="32" selection-end-line="606" selection-end-column="32" />
               <folding>
-                <marker date="1444010049687" expanded="true" signature="3817:4202" placeholder="..." />
-                <marker date="1444010049687" expanded="true" signature="8071:8460" placeholder="..." />
-                <marker date="1444010049687" expanded="true" signature="12219:12434" placeholder="..." />
-                <marker date="1444010049687" expanded="true" signature="12459:14204" placeholder="..." />
-                <marker date="1444010049687" expanded="true" signature="12497:14204" placeholder="..." />
-                <marker date="1444010049687" expanded="true" signature="12722:12826" placeholder="..." />
-                <marker date="1444010049687" expanded="true" signature="12722:12832" placeholder="..." />
-                <marker date="1444010049687" expanded="true" signature="13479:13631" placeholder="..." />
-                <marker date="1444010049687" expanded="true" signature="14064:14204" placeholder="..." />
+                <marker date="1444095332175" expanded="true" signature="3954:4339" placeholder="..." />
+                <marker date="1444095332175" expanded="true" signature="12259:12369" placeholder="..." />
               </folding>
             </state>
           </provider>
@@ -118,6 +134,7 @@
         <option value="$PROJECT_DIR$/homework/02-card_game/styles.css" />
         <option value="$PROJECT_DIR$/homework/04-big_card_game/styles.css" />
         <option value="$PROJECT_DIR$/homework/04-big_card_game/card.php" />
+        <option value="$PROJECT_DIR$/homework/04-big_card_game/card-v2.php" />
       </list>
     </option>
   </component>
@@ -299,6 +316,7 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Jared\Desktop\ACA\ACA_PHP_Intermediate\homework\04-big_card_game" />
       <recent name="$PROJECT_DIR$/homework/04-big_card_game" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
@@ -437,7 +455,13 @@
       <option name="project" value="LOCAL" />
       <updated>1443910955858</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="Built card game.&#10;&#10;Still need to add DocBook comments">
+      <created>1444010143331</created>
+      <option name="number" value="00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1444010143331</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -491,21 +515,14 @@
     <MESSAGE value="Correcting some sort of merge error" />
     <MESSAGE value="Finalized card formatting" />
     <MESSAGE value="Started card game. Finished card and deck. Working on player. Need to make dealer." />
-    <option name="LAST_COMMIT_MESSAGE" value="Started card game. Finished card and deck. Working on player. Need to make dealer." />
+    <MESSAGE value="Built card game.&#10;&#10;Still need to add DocBook comments" />
+    <option name="LAST_COMMIT_MESSAGE" value="Built card game.&#10;&#10;Still need to add DocBook comments" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/homework/02-card_game/card_game.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="159" column="57" selection-start-line="159" selection-start-column="57" selection-end-line="159" selection-end-column="57" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/homework/02-card_game/styles.css">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -843,14 +860,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/homework/02-card_game/card_game.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-37.653847">
-          <caret line="210" column="61" selection-start-line="210" selection-start-column="16" selection-end-line="210" selection-end-column="61" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/homework/04-big_card_game/styles.css">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -867,20 +876,33 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/homework/02-card_game/card_game.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.65384614">
+          <caret line="237" column="58" selection-start-line="237" selection-start-column="58" selection-end-line="237" selection-end-column="58" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/homework/04-big_card_game/card.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.88590604">
-          <caret line="570" column="75" selection-start-line="570" selection-start-column="75" selection-end-line="570" selection-end-column="75" />
+        <state vertical-scroll-proportion="-0.15212528">
+          <caret line="261" column="0" selection-start-line="261" selection-start-column="0" selection-end-line="261" selection-end-column="0" />
           <folding>
-            <marker date="1444010049687" expanded="true" signature="3817:4202" placeholder="..." />
-            <marker date="1444010049687" expanded="true" signature="8071:8460" placeholder="..." />
-            <marker date="1444010049687" expanded="true" signature="12219:12434" placeholder="..." />
-            <marker date="1444010049687" expanded="true" signature="12459:14204" placeholder="..." />
-            <marker date="1444010049687" expanded="true" signature="12497:14204" placeholder="..." />
-            <marker date="1444010049687" expanded="true" signature="12722:12826" placeholder="..." />
-            <marker date="1444010049687" expanded="true" signature="12722:12832" placeholder="..." />
-            <marker date="1444010049687" expanded="true" signature="13479:13631" placeholder="..." />
-            <marker date="1444010049687" expanded="true" signature="14064:14204" placeholder="..." />
+            <marker date="1444090592275" expanded="true" signature="3817:4202" placeholder="..." />
+            <marker date="1444090592275" expanded="true" signature="7560:7949" placeholder="..." />
+            <marker date="1444090592275" expanded="true" signature="12211:12321" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/homework/04-big_card_game/card-v2.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.8668904">
+          <caret line="606" column="32" selection-start-line="606" selection-start-column="32" selection-end-line="606" selection-end-column="32" />
+          <folding>
+            <marker date="1444095332175" expanded="true" signature="3954:4339" placeholder="..." />
+            <marker date="1444095332175" expanded="true" signature="12259:12369" placeholder="..." />
           </folding>
         </state>
       </provider>

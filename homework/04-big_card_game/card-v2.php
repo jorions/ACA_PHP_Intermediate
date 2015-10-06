@@ -164,6 +164,14 @@ class Card {
     }
 
     /**
+     * Return the rank of the card
+     * @return int
+     */
+    public function getRank() {
+        return $this->rank;
+    }
+
+    /**
      * Return the final card with color, suite, and rank
      * @return string
      */
@@ -182,7 +190,7 @@ class Card {
 
 
 
-class Deck extends Card {
+class Deck {
 
     /**
      * The array of the deck of cards
@@ -195,6 +203,12 @@ class Deck extends Card {
      * @var Card
      */
     public $returnedCard;
+
+    /**
+     * The various permitted suits for the cards
+     * @var array
+     */
+    protected $allowedSuits = array("Heart", "Diamond", "Spade", "Club");
 
     /**
      * Create the deck using the permitted suits
@@ -232,7 +246,7 @@ class Deck extends Card {
 }
 
 
-class Player extends Deck {
+class Player {
 
     /**
      * The player's name
@@ -252,6 +266,10 @@ class Player extends Deck {
      */
     public $handRender = "";
 
+    /**
+     * The player's score
+     * @var int
+     */
     public $score = 0;
 
     /**
@@ -278,17 +296,6 @@ class Player extends Deck {
         $this->hand[] = $card;
     }
 
-    /*
-    ###################################################################################################################################
-    ############################################### WHY DOES THIS NOT WORK? ###########################################################
-    ###################################################################################################################################
-    public function showHand() {
-        foreach($this->hand as $card) {
-            $card->render();
-        }
-    }
-    */
-
     /**
      * Combine all of the player's cards into 1 string that is HTML-ready
      * @return string
@@ -301,14 +308,7 @@ class Player extends Deck {
         // Iterate through the player's hand and add the HTML-formatted string representation of the card to the output string
         foreach($this->hand as $card) {
 
-
-            $this->handRender .= "<div class='card-$card->color'>
-            <div class='cardValueTopLeft'>$card->finalRank$card->icon</div>
-            <div class='cardValueTopRight'>$card->finalRank$card->icon</div>
-            <div class='cardSuitMiddle'>$card->icon</div>
-            <div class='cardValueBottomLeft'>$card->finalRank$card->icon</div>
-            <div class='cardValueBottomRight'>$card->finalRank$card->icon</div>
-            </div>";
+            $this->handRender .= $card->render();
         }
 
         $this->handRender .= "</div>";
@@ -317,7 +317,7 @@ class Player extends Deck {
     }
 }
 
-class Dealer extends Player {
+class Dealer {
 
     /**
      * An array of all of the players in the game
@@ -355,28 +355,32 @@ class Dealer extends Player {
      */
     public $highScore = 0;
 
-    /*
-     * ###################################################################################################################################
-     * #### IS IT BAD TO USE THE SAME VARIABLE NAME HERE AND IN THE DECK PARENT CLASS? THE VARIABLE DOESN'T EVEN SEEM NECESSARY HERE #####
-     * ###################################################################################################################################
+    /**
+     * The deck of cards that the dealer will handle
+     * @var Deck
      */
-    //public $deck;
+    public $deck;
 
+    /**
+     * Create a dealer who knows all of the players, how many cards to deal them, and has a deck to deal
+     * @param array $allPlayers An array of all of the players
+     * @param int $num The number of cards to deal each player
+     * @param Deck $deck The deck of cards to utilize
+     */
     public function __construct($allPlayers, $num, Deck $deck) {
+
         $this->players = $allPlayers;
         $this->numCards = $num;
-
-        /*
-         * ###################################################################################################################################
-         * ########################### WHY IS THIS REQUIRED? ISN'T THE DECK VARIABLE INHERITED FROM THE PARENT CLASS? ########################
-         * ###################################################################################################################################
-         */
         $this->deck = $deck;
     }
 
-
+    /**
+     * Add more decks to the hand if needed, and alert the player of the change via a returned HTML-formatted string
+     * @return string
+     */
     public function setupGame() {
 
+        // If there are not enough cards based on the number of players and the number of cards they need to be dealt, add more decks
         if (count($this->players) > count($this->deck->deck) / $this->numCards) {
 
             // Initialize variables to count how many more decks are needed
@@ -391,6 +395,7 @@ class Dealer extends Player {
 
                 // Loop through deck and build additional cards array
                 foreach ($this->deck->deck as $card) {
+
                     $extraCards[] = $card;
                 }
             }
@@ -400,18 +405,29 @@ class Dealer extends Player {
 
             // Tell users what happened
             if ($extraDecksNeeded == 1) {
+
                 return "<div class='message'>There are too many players so we have added 1 more deck</div>";
+
             } else {
+
                 return "<div class='message'>There are too many players so we have added  $extraDecksNeeded more decks</div>";
             }
         }
     }
 
+    /**
+     * Shuffle the deck and give each player a set number of cards
+     * @return void
+     */
     public function deals() {
+
+        // Shuffle the deck
         $this->deck->shuffle();
 
+        // Iterate through the array of players
         foreach ($this->players as $player) {
 
+            //  Give each player the set number of cards
             for ($i = 0; $i < $this->numCards; $i++) {
 
                 $player->receiveCard($this->deck->getCard());
@@ -419,16 +435,30 @@ class Dealer extends Player {
         }
     }
 
+    /**
+     * Iterate through each player and score their hand of cards
+     * @return void
+     */
     public function scoreGame() {
+
+        // Iterate through the array of players
         foreach($this->players as $player) {
+
+            // Iterate through the player's hand and add each card to that player's score
             foreach($player->hand as $card) {
-                $player->score += $card->rank;
+
+                $player->score += $card->getRank();
             }
         }
     }
 
+    /**
+     * Show the deck of cards face down
+     * @return string
+     */
     public function showDeck() {
 
+        // Prepare the HTML formatting for the deck of cards
         $this->deckRender = "<div class='hand'>";
 
         // Iterate through the deck and add an HTML-formatted string representation of the card image to the output string
@@ -436,13 +466,22 @@ class Dealer extends Player {
             $this->deckRender .= "<div class='card-black'><img src='images/card.png' /></div>";
         }
 
+        // Close the HTML formatting div
         $this->deckRender .= '</div>';
+
         return $this->deckRender;
     }
 
+    /**
+     * Show the scores of all players as an HTML-formatted string
+     * @return string
+     */
     public function showScores() {
 
+        // Iterate through the array of players
         foreach($this->players as $player) {
+
+            // Add the HTML-formatted player's score to the output string
             $this->scoreRender .= "<div class='hand'><div class='name'><b>$player->name's Score</b></div>
             <div class='score'>$player->score</div></div>";
         }
@@ -450,96 +489,122 @@ class Dealer extends Player {
         return $this->scoreRender;
     }
 
-
+    /**
+     * Determine the winning players and the high score
+     * @return array
+     */
     public function determineWinners() {
+
+        // Iterate through the array of players
         foreach($this->players as $player) {
+
+            // If the player's score is higher than the high score
             if($player->score > $this->highScore) {
+
+                // Set the high score
                 $this->highScore = $player->score;
+
+                // Reset the array with the player as the only value
                 $this->winnerArray = array();
                 $this->winnerArray[] = $player->name;
+
+            // Else if the player's score ties the high score
             } else if($player->score == $this->highScore) {
+
+                // Add the player to the array
                 $this->winnerArray[] = $player->name;
             }
         }
+
         return $this->winnerArray;
     }
 
+    /**
+     * Show the winner(s) of the match in an HTML-formatted string
+     * @return string
+     */
     public function showWinners() {
 
+        // If there is only 1 winner return their name with HTML formatting
         if(count($this->winnerArray) == 1) {
+
             return "<div class='score'>" . $this->winnerArray[0] . '! With a score of ' . $this->highScore . '!</div>';
+
+        // Else if there are 2 winners return both of their names with HTML formatting
         } else if(count($this->winnerArray) == 2) {
+
             return "<div class='score'>Both " . $this->winnerArray[0] . ' and ' . $this->winnerArray[1] . ' tied with a score of ' . $this->highScore . '!</div>';
+
+        // Else if there are 3 or more winners return all of their names in a list with HTML formatting
         } else if(count($this->winnerArray) >= 3) {
+
+            // Set a temporary string to hold all winners names
             $tempString = "";
+
+            // Iterate through the array of winning players and add them to the return string
             foreach($this->winnerArray as $winner) {
+
                 $tempString .= $winner . ", ";
             }
+
+            // Remove the last space and comma in the string
             $tempString = substr($tempString, 0, -2);
+
             return "<div class='score'>" . $tempString . ' all won with a score of ' . $this->highScore . '!</div>';
         }
     }
 }
 
 
-
+// Instantiate the deck
 $deck = new Deck();
 
+// Instantiate all players
 $jared = new Player("Jared");
-$jacy = new Player("Jacy");
-$jeremy = new Player("Jeremy");
+$samir = new Player("Samir");
+$alex = new Player("Alex");
+$traci = new Player("Traci");
+$brian = new Player("Brian");
+$simon = new Player("Simon");
+$jerry = new Player("Jerry");
 
-$allPlayers = array($jared, $jacy, $jeremy);
+// Put all players into an array
+$allPlayers = array($jared, $samir, $alex, $traci, $brian, $simon, $jerry);
 
+// Instantiate the dealer with the array of players, the number of cards to deal them, and the deck of cards
 $dealer = new Dealer($allPlayers, 3, $deck);
 
+// Make sure no additional decks are needed
 echo $dealer->setupGame();
 
+// Format game
 echo "<div class='table'>";
 
+    // Show the deck face down
     echo "<div class='headline'><b>The Deck</b></div>";
-
     echo $dealer->showDeck();
-
     echo "<div class='divider'></div>";
 
+    // Deal the cards to all players
     $dealer->deals();
 
-    /*
-    ###################################################################################################################################
-    ####################################### USE THIS APPROACH IF THERE IS NO SHOWHAND() METHOD ########################################
-    ###################################################################################################################################
-    echo "<div class='table'><div class='hand'>";
-
-    foreach($jared->hand as $card) {
-        echo $card->render();
-    }
-
-    echo "</div></div>";
-    */
-
+    // Show the players' hands
     echo "<div class='headline'>Player's Hands</div>";
-
     foreach($allPlayers as $player) {
         echo $player->showHand();
     }
-
     echo "<div class='divider'></div>";
 
+    // Show the players' scores
     echo "<div class='headline'><b>Score</b></div>";
-
     $dealer->scoreGame();
-
-    $dealer->determineWinners();
-
     echo $dealer->showScores();
-
     echo "<div class='divider'></div>";
 
+    // Determine and display a winner
     echo "<div class='headline'><b>And The Winner Is...</b></div>";
-
+    $dealer->determineWinners();
     echo $dealer->showWinners();
-
 
 echo "</div>";
 /*
