@@ -556,6 +556,50 @@ class Dealer {
 }
 
 
+if(isset($_POST['addPlayer'])) {
+
+}
+
+
+session_start();
+
+if(!isset($_POST['setNum'])) {
+    $_SESSION['addNames'] = 'TRUE';
+    $_SESSION['allPlayers'] = array();
+}
+
+if(isset($_POST['reset'])) {
+    session_destroy();
+}
+
+if(isset($_POST['addPlayer'])) {
+    $_SESSION['allPlayers'][] = new Player($_POST['newPlayer']);
+}
+
+if(isset($_POST['continueToSetNum'])) {
+    $_SESSION['addNames'] = 'FALSE';
+}
+?>
+
+<form action="<?php echo($_SERVER['PHP_SELF']);?>" method="POST">
+    <input type="submit" name="reset" value="Reset the game" />
+    <br />
+    <br />
+    <?php
+    if($_SESSION['addNames'] == 'TRUE') { ?>
+        <input type="text" name="newPlayer" placeholder="Player name" />
+        <input type="submit" name="addPlayer" value="Add Player" /> <br />
+        <input type="submit" name="continueToSetNum" value="Continue" />
+    <?php
+    } else if (isset($_POST['continueToSetNum'])) { ?>
+        <input type="text" name="numCards" placeholder="Number of cards per player" />
+        <input type="submit" name="setNum" value="Continue" /> <br />
+    <?php
+    } else { ?>
+</form>
+<?php
+
+
 // Instantiate the deck (this instantiates an array of card objects, and the card constructor can throw an exception, so wrap it in a try/catch)
 try {
     $deck = new Deck();
@@ -565,20 +609,8 @@ try {
     echo 'An error occurred: ' . $e->getMessage();
 }
 
-// Instantiate all players
-$jared = new Player("Jared");
-$samir = new Player("Samir");
-$alex = new Player("Alex");
-$traci = new Player("Traci");
-$brian = new Player("Brian");
-$simon = new Player("Simon");
-$jerry = new Player("Jerry");
-
-// Put all players into an array
-$allPlayers = array($jared, $samir, $alex, $traci, $brian, $simon, $jerry);
-
 // Instantiate the dealer with the array of players, the number of cards to deal them, and the deck of cards
-$dealer = new Dealer($allPlayers, 3, $deck);
+$dealer = new Dealer($_SESSION['allPlayers'], $_POST['setNum'], $deck);
 
 // Make sure no additional decks are needed
 echo $dealer->setupGame();
@@ -586,33 +618,34 @@ echo $dealer->setupGame();
 // Format game
 echo "<div class='table'>";
 
-    // Show the deck face down
-    echo "<div class='headline'><b>The Deck</b></div>";
-    echo $dealer->showDeck();
-    echo "<div class='divider'></div>";
+// Show the deck face down
+echo "<div class='headline'><b>The Deck</b></div>";
+echo $dealer->showDeck();
+echo "<div class='divider'></div>";
 
-    // Deal the cards to all players
-    $dealer->deals();
+// Deal the cards to all players
+$dealer->deals();
 
-    // Show the players' hands
-    echo "<div class='headline'>Player's Hands</div>";
-    foreach($allPlayers as $player) {
-        echo $player->showHand();
-    }
-    echo "<div class='divider'></div>";
+// Show the players' hands
+echo "<div class='headline'>Player's Hands</div>";
+foreach ($allPlayers as $player) {
+    echo $player->showHand();
+}
+echo "<div class='divider'></div>";
 
-    // Show the players' scores
-    echo "<div class='headline'><b>Score</b></div>";
-    $dealer->scoreGame();
-    echo $dealer->showScores();
-    echo "<div class='divider'></div>";
+// Show the players' scores
+echo "<div class='headline'><b>Score</b></div>";
+$dealer->scoreGame();
+echo $dealer->showScores();
+echo "<div class='divider'></div>";
 
-    // Determine and display a winner
-    echo "<div class='headline'><b>And The Winner Is...</b></div>";
-    $dealer->determineWinners();
-    echo $dealer->showWinners();
+// Determine and display a winner
+echo "<div class='headline'><b>And The Winner Is...</b></div>";
+$dealer->determineWinners();
+echo $dealer->showWinners();
 
 echo "</div>";
+}
 /*
  * ###################################################################################################################################
  * ##################################################### OTHER QUESTIONS #############################################################
