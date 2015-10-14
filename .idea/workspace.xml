@@ -1,12 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="2b00f22a-bab1-4afa-ad82-14534465cfd0" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/notes/day09/05-front_controller/.htaccess" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/notes/day09/06-dependency_injection.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/notes/day09/05-front_controller/index.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-    </list>
+    <list default="true" id="2b00f22a-bab1-4afa-ad82-14534465cfd0" name="Default" comment="" />
     <ignored path="intermediate.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path=".idea/dataSources.local.xml" />
