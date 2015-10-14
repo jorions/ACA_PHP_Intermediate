@@ -2,14 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2b00f22a-bab1-4afa-ad82-14534465cfd0" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/notes/day09/01-abstract_classes.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/notes/day07/01-static.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/notes/day09/02-interfaces.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/notes/day07/02-static.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/notes/day07/03-late_static_binding.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/notes/day07/04-constructors.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/notes/day07/05-sessions.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/notes/day07/06-login.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/notes/day09/03-factory.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/notes/day09/04-singleton.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="intermediate.iws" />
@@ -42,11 +36,33 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="02-interfaces.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="02-interfaces.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/notes/day09/02-interfaces.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.28806585">
+            <state vertical-scroll-proportion="-8.75">
               <caret line="14" column="61" selection-start-line="14" selection-start-column="61" selection-end-line="14" selection-end-column="61" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="03-factory.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/notes/day09/03-factory.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-1.25">
+              <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+              <folding>
+                <element signature="e#7#34#0#PHP" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="04-singleton.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/notes/day09/04-singleton.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -103,6 +119,7 @@
         <option value="$PROJECT_DIR$/notes/day07/06-login.php" />
         <option value="$PROJECT_DIR$/notes/day09/01-abstract_classes.php" />
         <option value="$PROJECT_DIR$/notes/day09/02-interfaces.php" />
+        <option value="$PROJECT_DIR$/notes/day09/03-factory.php" />
       </list>
     </option>
   </component>
@@ -443,20 +460,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/notes/day03/01-notes.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/notes/day04/01-web_programming.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="3" column="2" selection-start-line="3" selection-start-column="2" selection-end-line="3" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/notes/day04/02-web_programming_example.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -671,6 +674,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -678,6 +682,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -685,6 +690,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -714,6 +720,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -721,6 +728,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="13.125">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -816,8 +824,26 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/notes/day09/02-interfaces.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.28806585">
+        <state vertical-scroll-proportion="-8.75">
           <caret line="14" column="61" selection-start-line="14" selection-start-column="61" selection-end-line="14" selection-end-column="61" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/notes/day09/03-factory.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-1.25">
+          <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+          <folding>
+            <element signature="e#7#34#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/notes/day09/04-singleton.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
