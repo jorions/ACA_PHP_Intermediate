@@ -560,92 +560,104 @@ if(isset($_POST['addPlayer'])) {
 
 }
 
-
+// Start session variables
 session_start();
 
-if(!isset($_POST['setNum'])) {
-    $_SESSION['addNames'] = 'TRUE';
+// If reset button is pressed reset all session variables
+if(isset($_POST['reset'])) {
+    session_destroy();
+    session_start();
+}
+
+// If the session variables haven't been declared, give starting values
+if(!isset($_SESSION['addingNames'])) {
+    $_SESSION['addingNames'] = 'TRUE';
     $_SESSION['allPlayers'] = array();
 }
 
-if(isset($_POST['reset'])) {
-    session_destroy();
-}
-
+// If the addPlayer button is pressed add a new player to the allPlayers array
 if(isset($_POST['addPlayer'])) {
     $_SESSION['allPlayers'][] = new Player($_POST['newPlayer']);
 }
 
+// If continue button is pressed set session variable to false for logic to not show the first part of the form
 if(isset($_POST['continueToSetNum'])) {
-    $_SESSION['addNames'] = 'FALSE';
+    $_SESSION['addingNames'] = 'FALSE';
 }
-?>
 
-<form action="<?php echo($_SERVER['PHP_SELF']);?>" method="POST">
-    <input type="submit" name="reset" value="Reset the game" />
-    <br />
-    <br />
-    <?php
-    if($_SESSION['addNames'] == 'TRUE') { ?>
-        <input type="text" name="newPlayer" placeholder="Player name" />
-        <input type="submit" name="addPlayer" value="Add Player" /> <br />
-        <input type="submit" name="continueToSetNum" value="Continue" />
-    <?php
-    } else if (isset($_POST['continueToSetNum'])) { ?>
-        <input type="text" name="numCards" placeholder="Number of cards per player" />
-        <input type="submit" name="setNum" value="Continue" /> <br />
-    <?php
-    } else { ?>
-</form>
+?>
+<div class="table">
+    <form action="<?php echo($_SERVER['PHP_SELF']);?>" method="POST">
+        <input type="submit" name="reset" value="Reset the game" />
+        <br />
+        <br />
+        <?php
+        // If user is still adding names show first part of form
+        if($_SESSION['addingNames'] == 'TRUE') { ?>
+            <input type="text" name="newPlayer" placeholder="Player name" />
+            <input type="submit" name="addPlayer" value="Add Player" /> <br />
+            <input type="submit" name="continueToSetNum" value="Continue" />
+        <?php
+            //Show array of players
+            if(count($_SESSION['allPlayers']) >= 1) {
+                foreach($_SESSION['allPlayers'] as $player) {
+                    echo $player->name;
+                }
+            }
+        // If the continue button is pressed then show next part of form
+        } else if (isset($_POST['continueToSetNum'])) { ?>
+            <input type="text" name="numCards" placeholder="Number of cards per player" />
+            <input type="submit" name="setNum" value="Continue" /> <br />
+        <?php
+
+        // Now play the game!
+        } else { ?>
+    </form>
 <?php
 
+            // Instantiate the deck (this instantiates an array of card objects, and the card constructor can throw an exception, so wrap it in a try/catch)
+            try {
+                $deck = new Deck();
 
-// Instantiate the deck (this instantiates an array of card objects, and the card constructor can throw an exception, so wrap it in a try/catch)
-try {
-    $deck = new Deck();
+            } catch (Exception $e) {
 
-} catch (Exception $e) {
+                echo 'An error occurred: ' . $e->getMessage();
+            }
 
-    echo 'An error occurred: ' . $e->getMessage();
-}
+            // Instantiate the dealer with the array of players, the number of cards to deal them, and the deck of cards
+            $dealer = new Dealer($_SESSION['allPlayers'], $_POST['numCards'], $deck);
 
-// Instantiate the dealer with the array of players, the number of cards to deal them, and the deck of cards
-$dealer = new Dealer($_SESSION['allPlayers'], $_POST['setNum'], $deck);
+            // Make sure no additional decks are needed
+            echo $dealer->setupGame();
 
-// Make sure no additional decks are needed
-echo $dealer->setupGame();
+                // Show the deck face down
+                echo "<div class='headline'><b>The Deck</b></div>";
+                echo $dealer->showDeck();
+                echo "<div class='divider'></div>";
 
-// Format game
-echo "<div class='table'>";
+                // Deal the cards to all players
+                $dealer->deals();
 
-// Show the deck face down
-echo "<div class='headline'><b>The Deck</b></div>";
-echo $dealer->showDeck();
-echo "<div class='divider'></div>";
+                // Show the players' hands
+                echo "<div class='headline'>Player's Hands</div>";
+                foreach ($_SESSION['allPlayers'] as $player) {
+                    echo $player->showHand();
+                }
+                echo "<div class='divider'></div>";
 
-// Deal the cards to all players
-$dealer->deals();
+                // Show the players' scores
+                echo "<div class='headline'><b>Score</b></div>";
+                $dealer->scoreGame();
+                echo $dealer->showScores();
+                echo "<div class='divider'></div>";
 
-// Show the players' hands
-echo "<div class='headline'>Player's Hands</div>";
-foreach ($allPlayers as $player) {
-    echo $player->showHand();
-}
-echo "<div class='divider'></div>";
+                // Determine and display a winner
+                echo "<div class='headline'><b>And The Winner Is...</b></div>";
+                $dealer->determineWinners();
+                echo $dealer->showWinners();
 
-// Show the players' scores
-echo "<div class='headline'><b>Score</b></div>";
-$dealer->scoreGame();
-echo $dealer->showScores();
-echo "<div class='divider'></div>";
-
-// Determine and display a winner
-echo "<div class='headline'><b>And The Winner Is...</b></div>";
-$dealer->determineWinners();
-echo $dealer->showWinners();
-
-echo "</div>";
-}
+            echo "</div>";
+        }
 /*
  * ###################################################################################################################################
  * ##################################################### OTHER QUESTIONS #############################################################
