@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2b00f22a-bab1-4afa-ad82-14534465cfd0" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/notes/day09/03-factory.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/notes/day09/04-singleton.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/notes/day09/04-singleton.php" afterPath="$PROJECT_DIR$/notes/day09/04-singleton.php" />
     </list>
     <ignored path="intermediate.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -61,8 +59,8 @@
       <file leaf-file-name="04-singleton.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/notes/day09/04-singleton.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.91769546">
+              <caret line="48" column="92" selection-start-line="48" selection-start-column="92" selection-end-line="48" selection-end-column="92" />
               <folding />
             </state>
           </provider>
@@ -120,6 +118,7 @@
         <option value="$PROJECT_DIR$/notes/day09/01-abstract_classes.php" />
         <option value="$PROJECT_DIR$/notes/day09/02-interfaces.php" />
         <option value="$PROJECT_DIR$/notes/day09/03-factory.php" />
+        <option value="$PROJECT_DIR$/notes/day09/04-singleton.php" />
       </list>
     </option>
   </component>
@@ -842,8 +841,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/notes/day09/04-singleton.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.91769546">
+          <caret line="48" column="92" selection-start-line="48" selection-start-column="92" selection-end-line="48" selection-end-column="92" />
           <folding />
         </state>
       </provider>
