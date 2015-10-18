@@ -2,7 +2,7 @@
 
 include 'vendor/autoload.php';
 
-// HOW DOES THIS REFERENCE WORK? DOESN'T IT NEED TO BE A FILE PATH?
+// IS THIS A NAMESPACE? HOW DOES THIS WORK?
 use Guzzle\Http\Client;
 
 class NetflixSearch {
@@ -95,10 +95,18 @@ class NetflixSearch {
         $this->actor = $actor;
     }
 
+    /**
+     * @return string
+     */
     public function performSearch()
     {
+        /**
+         * Array of search parameters
+         * @var array
+         */
         $search = array();
 
+        // If each of the different properties are set add them to the array
         if(isset($this->title)) {
             $search['title'] = $this->title;
         }
@@ -112,71 +120,76 @@ class NetflixSearch {
             $search['actor'] = $this->actor;
         }
 
+        // If the search array has any parameters in it run the search
         if(count($search) > 0) {
-            //$query = "http://netflixroulette.net/api/api.php?" . http_build_query($search);
 
-            //Test return
-            //return $query;
-            //return http_build_query($search);
+            // Format the search parameters array for URL
             $query = http_build_query($search);
-            return $query;
-            //Implement guzzle
+
+            // ####################################### THIS USES GUZZLE ############################################
+            // ############# MORE INFO FOUND AT http://guzzle3.readthedocs.org/http-client/client.html #############
+            // #####################################################################################################
+            // Create a Guzzle client and provide a base URL
+            $client = new Client('http://netflixroulette.net/api');
+
+            // Add the search parameters to the URL
+            $request = $client->get('api.php?' . $query);
+            $request->getUrl();
+
+            // You must send a request in order for the transfer to occur
+            $response = $request->send();
+
+            // Encode returned JSON data to array
+            $data = $response->json();
+
+            // Use this to test view array of returned movies
+            //print_r($data);
+
+            // Return value of function that outputs HTML-formatted results
+            return $this->outputResults($data);
         }
     }
-}
 
+    /**
+     * @param $data
+     * @return string $output of HTML-formatted list of movies
+     */
+    public function outputResults($data)
+    {
+        /**
+         * The output string to show all movies
+         * @var string
+         */
+        $output = '';
 
-$search = new NetflixSearch();
+        // If the first index of the returned array is also an array there are multiple returned movies, so foreach through the result
+        if(isset($data[0]) && is_array($data[0])) {
+            foreach($data as $movie) {
+                $output .= "<img src='" . $movie['poster'] . "'></img>";
+                $output .= '<br />';
 
-$search->setDirector('Steven Spielberg');
+                $output .= '<h1>' . $movie['show_title'] . "<br /><img src='images/" . str_replace('.', '_', $movie['rating']) . ".jpg'><img></h1>";
+                if($movie['director'] != "") {
+                    $output .= 'Directed by ' . $movie['director'];
+                }
+                $output .= '<br />';
+                $output .= $movie['summary'];
+                $output .= '<br />';
+            }
+        // Otherwise do not foreach through the movies, simply output the single movie
+        } else {
+            $output .= "<img src='" . $data['poster'] . "'></img>";
+            $output .= '<br />';
 
-//$search->setTitle('The Boondocks');
-//$search->setYear(2005);
-
-//$search->setActor('John Mahoney');
-
-// Create a client and provide a base URL
-$client = new Client('http://netflixroulette.net/api');
-
-$request = $client->get('api.php?' . $search->performSearch());
-$request->getUrl();
-
-// You must send a request in order for the transfer to occur
-$response = $request->send();
-
-$response->getHeader('Content-Length');
-
-
-$data = $response->json();
-
-// use this to view array of returned movies
-//print_r($data);
-
-// if the first index of the returned array is also an array there are multiple returned movies, so foreach through the result
-if(is_array($data[0])) {
-    foreach($data as $movie) {
-        echo "<img src='" . $movie['poster'] . "'></img>";
-        echo '<br />';
-
-        echo '<h2>' . $movie['show_title'] . " <img src='images/" . str_replace('.', '_', $movie['rating']) . ".jpg'><img></h2>";
-        if($movie['director'] != "") {
-            echo 'Directed by ' . $movie['director'];
+            $output .= '<h1>' . $data['show_title'] . "<br /><img src='images/" . str_replace('.', '_', $data['rating']) . ".jpg'><img></h1>";
+            if($data['director'] != "") {
+                $output .= 'Directed by ' . $data['director'];
+            }
+            $output .= '<br />';
+            $output .= $data['summary'];
+            $output .= '<br />';
         }
-        echo '<br />';
-        echo $movie['summary'];
-        echo '<br />';
-    }
 
-// otherwise do not foreach through the movies, simply output the single movie
-} else {
-    echo "<img src='" . $data['poster'] . "'></img>";
-    echo '<br />';
-
-    echo '<h2>' . $data['show_title'] . " <img src='images/" . str_replace('.', '_', $data['rating']) . ".jpg'><img></h2>";
-    if($data['director'] != "") {
-        echo 'Directed by ' . $data['director'];
+        return $output;
     }
-    echo '<br />';
-    echo $data['summary'];
-    echo '<br />';
 }
