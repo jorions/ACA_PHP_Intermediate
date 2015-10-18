@@ -1,0 +1,12 @@
+{
+  "name": "aca/netflix-search",
+  "require": {
+    "guzzle/guzzle": "3.9.3"
+  },
+  "authors": [
+    {
+      "name": "Jared Selcoe",
+      "email": "jared.orion.selcoe@gmail.com"
+    }
+  ]
+}
