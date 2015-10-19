@@ -83,11 +83,19 @@ if($_SESSION['year'] != '') {
 
 // User a try statement to make sure the search returns something. If it doesn't, catch exception and output array of suggested shows
 try {
+
     echo $search->performSearch();
+
 } catch (Exception $e) {
+
     echo '<div class="error">Nothing returned from that search! Maybe you could check out one of these awesome shows:</div>';
+
+    // Array of shows
     $goodShows = array("30 Rock", "It's Always Sunny In Philadelphia", "Parks and Recreation", "The Inexplicable Universe With Neil deGrasse Tyson");
+
     $suggestion = new NetflixSearch();
+
+    // Iterate through array and run search each time
     foreach ($goodShows as $show) {
         $suggestion->setTitle($show);
         echo $suggestion->performSearch();
