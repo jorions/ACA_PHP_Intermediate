@@ -165,28 +165,46 @@ class NetflixSearch {
         // If the first index of the returned array is also an array there are multiple returned movies, so foreach through the result
         if(isset($data[0]) && is_array($data[0])) {
             foreach($data as $movie) {
-                $output .= "<img src='" . $movie['poster'] . "'></img>";
-                $output .= '<br />';
-
-                $output .= '<h1>' . $movie['show_title'] . "<br /><img src='images/" . str_replace('.', '_', $movie['rating']) . ".jpg'><img></h1>";
-                if($movie['director'] != "") {
-                    $output .= 'Directed by ' . $movie['director'];
-                }
-                $output .= '<br />';
-                $output .= $movie['summary'];
+                $output .= "<div class='result'>";
+                    // mediatype = 0 for movies, which have portrait-oriented images, while 1 is for shows, which have landscape-oriented images
+                    if($movie['mediatype'] == 0) {
+                        $output .= "<div class='poster-movie'>";
+                    } else {
+                        $output .= "<div class='poster-show'>";
+                    }
+                        $output .= "<img src='" . $movie['poster'] . "' />";
+                    $output .= "</div>";
+                    $output .= '<div class="info">';
+                        $output .= '<h1>' . $movie['show_title'] . "<br /><img src='images/" . str_replace('.', '_', $movie['rating']) . ".jpg' /></h1>";
+                        if($movie['director'] != "") {
+                            $output .= '<span class="director">Directed by ' . $movie['director'] . '</span><br />';
+                        }
+                        $output .= '<br />';
+                        $output .= $movie['summary'];
+                    $output .= '</div>';
+                $output .= '</div>';
                 $output .= '<br />';
             }
         // Otherwise do not foreach through the movies, simply output the single movie
         } else {
-            $output .= "<img src='" . $data['poster'] . "'></img>";
-            $output .= '<br />';
-
-            $output .= '<h1>' . $data['show_title'] . "<br /><img src='images/" . str_replace('.', '_', $data['rating']) . ".jpg'><img></h1>";
-            if($data['director'] != "") {
-                $output .= 'Directed by ' . $data['director'];
-            }
-            $output .= '<br />';
-            $output .= $data['summary'];
+            $output .= "<div class='result'>";
+                // mediatype = 0 for movies, which have portrait-oriented images, while 1 is for shows, which have landscape-oriented images
+                if($data['mediatype'] == 0) {
+                    $output .= "<div class='poster-movie'>";
+                } else {
+                    $output .= "<div class='poster-show'>";
+                }
+                    $output .= "<img src='" . $data['poster'] . "' />";
+                $output .= "</div>";
+                $output .= '<div class="info">';
+                    $output .= '<h1>' . $data['show_title'] . "<br /><img src='images/" . str_replace('.', '_', $data['rating']) . ".jpg' /></h1>";
+                    if($data['director'] != "") {
+                        $output .= '<span class="director">Directed by ' . $data['director'] . '</span><br />';
+                    }
+                    $output .= '<br />';
+                    $output .= $data['summary'];
+                $output .= '</div>';
+            $output .= '</div>';
             $output .= '<br />';
         }
 

@@ -56,7 +56,73 @@ h1 {
     text-align: center;
     font-size: 25px;
     color: #920200;
-    border-bottom: 5px;
-    border-style: solid;
-    border-color: #920200;
+    border-bottom: solid 5px #920200;
+}
+
+.result {
+    position: relative;
+    width: 100%;
+    height: 420px;
+    display: block;
+}
+
+.poster-movie, .poster-show {
+    width: 30%;
+    height: 400px;
+    display: inline-block;
+    position: relative;
+    margin: auto;
+    float: left;
+    overflow: hidden;
+}
+
+.poster-movie img {
+     margin: auto;
+     display: block;
+     max-height: 100%;
+}
+
+.poster-show img {
+    margin: auto;
+    display: block;
+    max-width: 100%;
+}
+
+.info {
+    width: 65%;
+    height: 400px;
+    display: inline-block;
+    position: relative;
+    margin-left: 20px;
+    margin-right: auto;
+    float: left;
+}
+
+.left {
+    width: 100px;
+    height: 100%;
+    z-index: 2;
+    background: white;
+    top: 0px;
+    position: absolute;
+    left: 0px;
+}
+.right {
+    width: 100px;
+    height: 100%;
+    z-index: 2;
+    position: absolute;
+    background: white;
+    top: 0px;
+    right: 0px;
+}
+
+.director {
+    font-style: italic;
+}
+
+.spacer {
+    position: relative;
+    height: 20px;
+    width: 100%;
 }

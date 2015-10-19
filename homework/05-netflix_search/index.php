@@ -62,7 +62,7 @@ if($_SESSION['actor'] != '' && !is_string($_SESSION['actor'])) {
 
 // If nothing is entered tell the user
 if(isset($_POST['submit']) && $_SESSION['title'] == '' && $_SESSION['director'] == '' && $_SESSION['actor']  == '' && $_SESSION['year'] == '') {
-    exit('Enter something to search in at least one field');
+    exit('<div class="error">Enter something to search in at least one field</div>');
 }
 
 // With validation complete set each of the parameters and submit a search query
@@ -81,4 +81,15 @@ if($_SESSION['year'] != '') {
     $search->setYear($_SESSION['year']);
 }
 
-echo $search->performSearch();
+// User a try statement to make sure the search returns something. If it doesn't, catch exception and output array of suggested shows
+try {
+    echo $search->performSearch();
+} catch (Exception $e) {
+    echo '<div class="error">Nothing returned from that search! Maybe you could check out one of these awesome shows:</div>';
+    $goodShows = array("30 Rock", "It's Always Sunny In Philadelphia", "Parks and Recreation", "The Inexplicable Universe With Neil deGrasse Tyson");
+    $suggestion = new NetflixSearch();
+    foreach ($goodShows as $show) {
+        $suggestion->setTitle($show);
+        echo $suggestion->performSearch();
+    }
+}
