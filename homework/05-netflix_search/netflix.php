@@ -169,10 +169,19 @@ class NetflixSearch {
                     // mediatype = 0 for movies, which have portrait-oriented images, while 1 is for shows, which have landscape-oriented images
                     if($movie['mediatype'] == 0) {
                         $output .= "<div class='poster-movie'>";
+                        if (getimagesize($movie['poster'])) {
+                            $output .= "<img src='" . $movie['poster'] . "' />";
+                        } else {
+                            $output .= "<img src='images/poster-movie.jpg' />";
+                        }
                     } else {
                         $output .= "<div class='poster-show'>";
+                        if (getimagesize($movie['poster'])) {
+                            $output .= "<img src='" . $movie['poster'] . "' />";
+                        } else {
+                            $output .= "<img src='images/poster-show.jpg' />";
+                        }
                     }
-                        $output .= "<img src='" . $movie['poster'] . "' />";
                     $output .= "</div>";
                     $output .= '<div class="info">';
                         $output .= '<h1>' . $movie['show_title'] . "<br /><img src='images/" . str_replace('.', '_', $movie['rating']) . ".jpg' /></h1>";
@@ -188,24 +197,33 @@ class NetflixSearch {
         // Otherwise do not foreach through the movies, simply output the single movie
         } else {
             $output .= "<div class='result'>";
-                // mediatype = 0 for movies, which have portrait-oriented images, while 1 is for shows, which have landscape-oriented images
-                if($data['mediatype'] == 0) {
-                    $output .= "<div class='poster-movie'>";
-                } else {
-                    $output .= "<div class='poster-show'>";
-                }
+            // mediatype = 0 for movies, which have portrait-oriented images, while 1 is for shows, which have landscape-oriented images
+            if($data['mediatype'] == 0) {
+                $output .= "<div class='poster-movie'>";
+                if (getimagesize($data['poster'])) {
                     $output .= "<img src='" . $data['poster'] . "' />";
-                $output .= "</div>";
-                $output .= '<div class="info">';
-                    $output .= '<h1>' . $data['show_title'] . "<br /><img src='images/" . str_replace('.', '_', $data['rating']) . ".jpg' /></h1>";
-                    if($data['director'] != "") {
-                        $output .= '<span class="director">Directed by ' . $data['director'] . '</span><br />';
-                    }
-                    $output .= '<br />';
-                    $output .= $data['summary'];
-                $output .= '</div>';
+                } else {
+                    $output .= "<img src='images/poster-movie.jpg' />";
+                }
+            } else {
+                $output .= "<div class='poster-show'>";
+                if (getimagesize($data['poster'])) {
+                    $output .= "<img src='" . $data['poster'] . "' />";
+                } else {
+                    $output .= "<img src='images/poster-show.jpg' />";
+                }
+            }
+            $output .= "</div>";
+            $output .= '<div class="info">';
+                $output .= '<h1>' . $data['show_title'] . "<br /><img src='images/" . str_replace('.', '_', $data['rating']) . ".jpg' /></h1>";
+                if($data['director'] != "") {
+                    $output .= '<span class="director">Directed by ' . $data['director'] . '</span><br />';
+                }
+                $output .= '<br />';
+                $output .= $data['summary'];
             $output .= '</div>';
-            $output .= '<br />';
+        $output .= '</div>';
+        $output .= '<br />';
         }
 
         return $output;
