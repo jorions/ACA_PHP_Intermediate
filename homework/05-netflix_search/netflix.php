@@ -204,7 +204,12 @@ class NetflixSearch {
                     $output .= '</div>';
                 $output .= '</div>';
                 $output .= '<br />';
+                $output .= '<div class="thin-red-spacer"></div>';
             }
+
+            // Remove the final thin-red-spacer so that the bottom of the screen does not have one
+            $output = substr($output, 0, -strlen('<div class="thin-red-spacer"></div>'));
+
         // Otherwise do not foreach through the movies, simply output the single movie
         } else {
             $output .= "<div class='result'>";

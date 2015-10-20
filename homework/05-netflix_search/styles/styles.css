@@ -70,7 +70,8 @@ h1 {
 }
 
 .poster-movie, .poster-show {
-    width: 30%;
+    /* Set to 30% for alternative style */
+    width: 40%;
     height: 400px;
     display: inline-block;
     position: relative;
@@ -80,19 +81,29 @@ h1 {
 }
 
 .poster-movie img {
-     margin: auto;
-     display: block;
-     max-height: 100%;
+    margin: 5% auto;
+    display: block;
+    /* Set to 100% and remove shadow for alternative style */
+    max-height: 85%;
+    -moz-box-shadow: 0 0 20px #000000;
+    -webkit-box-shadow: 0 0 20px #000000;
+    box-shadow: 0 0 20px #000000;
 }
 
 .poster-show img {
-    margin: auto;
+    margin: 5% auto;
     display: block;
-    max-width: 100%;
+    /* Set to 100% and remove max-height and shadow for alternative style */
+    max-width: 95%;
+    max-height: 85%;
+    -moz-box-shadow: 0 0 20px #000000;
+    -webkit-box-shadow: 0 0 20px #000000;
+    box-shadow: 0 0 20px #000000;
 }
 
 .info {
-    width: 65%;
+    /* Set to 65% for alternative style */
+    width: 55%;
     height: 400px;
     display: inline-block;
     position: relative;
@@ -128,4 +139,11 @@ h1 {
     position: relative;
     height: 20px;
     width: 100%;
+}
+
+.thin-red-spacer {
+    position: relative;
+    height: 5px;
+    width: 100%;
+    background-color: #920200;
 }

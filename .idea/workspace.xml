@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="2b00f22a-bab1-4afa-ad82-14534465cfd0" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/homework/05-netflix_search/netflix.php" afterPath="$PROJECT_DIR$/homework/05-netflix_search/netflix.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/homework/05-netflix_search/styles/styles.css" afterPath="$PROJECT_DIR$/homework/05-netflix_search/styles/styles.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="intermediate.iws" />
@@ -111,8 +112,8 @@
       <file leaf-file-name="netflix.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/homework/05-netflix_search/netflix.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="4.885748">
-              <caret line="244" column="20" selection-start-line="244" selection-start-column="20" selection-end-line="244" selection-end-column="20" />
+            <state vertical-scroll-proportion="0.819788">
+              <caret line="209" column="98" selection-start-line="209" selection-start-column="98" selection-end-line="209" selection-end-column="98" />
               <folding />
             </state>
           </provider>
@@ -132,7 +133,7 @@
         <entry file="file://$PROJECT_DIR$/homework/05-netflix_search/styles/styles.css">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="60" column="25" selection-start-line="60" selection-start-column="25" selection-end-line="60" selection-end-column="25" />
+              <caret line="145" column="13" selection-start-line="145" selection-start-column="13" selection-end-line="145" selection-end-column="13" />
               <folding />
             </state>
           </provider>
@@ -708,7 +709,13 @@
       <option name="project" value="LOCAL" />
       <updated>1445317171352</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="Finalized formatting">
+      <created>1445317520236</created>
+      <option name="number" value="00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1445317520236</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -772,7 +779,8 @@
     <MESSAGE value="Added images" />
     <MESSAGE value="Updated comments and minor spacing" />
     <MESSAGE value="Finished project!" />
-    <option name="LAST_COMMIT_MESSAGE" value="Finished project!" />
+    <MESSAGE value="Finalized formatting" />
+    <option name="LAST_COMMIT_MESSAGE" value="Finalized formatting" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -1142,7 +1150,7 @@
     <entry file="file://$PROJECT_DIR$/homework/05-netflix_search/styles/styles.css">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="60" column="25" selection-start-line="60" selection-start-column="25" selection-end-line="60" selection-end-column="25" />
+          <caret line="145" column="13" selection-start-line="145" selection-start-column="13" selection-end-line="145" selection-end-column="13" />
           <folding />
         </state>
       </provider>
@@ -1157,8 +1165,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/homework/05-netflix_search/netflix.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="4.885748">
-          <caret line="244" column="20" selection-start-line="244" selection-start-column="20" selection-end-line="244" selection-end-column="20" />
+        <state vertical-scroll-proportion="0.819788">
+          <caret line="209" column="98" selection-start-line="209" selection-start-column="98" selection-end-line="209" selection-end-column="98" />
           <folding />
         </state>
       </provider>
